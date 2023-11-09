@@ -72,7 +72,7 @@ exports.markCompleted = catchAsync(async (req, res, next) => {
     user: req.user.id, // Assuming you have user information in the request
     type: 'completed',
     details: `Completed checklist item: ${check.name}`,
-    checklistItem: checklistItem._id,
+    checklistItem: check._id,
     task: checklistItem.task,
   });
   // send notification
