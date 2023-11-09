@@ -1,0 +1,53 @@
+{
+  "status": "success",
+  "data": {
+    "user": {
+      "_id": "6549623fd2283c9a5c11500e",
+      "name": "amr mohameddd",
+      "email": "amr12@gmail.com",
+      "password": "wdsdasdsdas",
+      "tasks": [
+        {
+          "_id": "65493fd8190cc1a1fae9df91",
+          "name": "firsttaskk",
+          "details": "this is my first task",
+          "members": [
+            {
+              "_id": "6549139d039960dbab03f2eb",
+              "name": "amr mohamed",
+              "email": "amr@gmail.com",
+              "password": "wdsdasdsdas",
+              "tasks": ["65490d70c86da6ae1e213e86"],
+              "role": "user",
+              "photo": "default.jpg",
+              "active": true,
+              "createdAt": "2023-11-06T16:26:05.698Z",
+              "updatedAt": "2023-11-06T16:26:05.698Z",
+              "__v": 0
+            }
+          ],
+          "dueDate": "2023-11-30T00:00:00.000Z",
+          "done": false,
+          "createdAt": "2023-11-06T19:34:48.469Z",
+          "updatedAt": "2023-11-06T22:03:33.887Z",
+          "__v": 0,
+          "checkList": [
+            {
+              "_id": "65496292d2283c9a5c115015",
+              "name": "check4",
+              "completed": false,
+              "task": "65493fd8190cc1a1fae9df91"
+            }
+          ],
+          "id": "65493fd8190cc1a1fae9df91"
+        }
+      ],
+      "role": "user",
+      "photo": "default.jpg",
+      "active": true,
+      "createdAt": "2023-11-06T22:01:35.490Z",
+      "updatedAt": "2023-11-06T22:01:35.490Z",
+      "__v": 0
+    }
+  }
+}

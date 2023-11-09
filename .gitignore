@@ -1,0 +1,8 @@
+
+/taski-design
+*.env
+dataModel.png
+.vscode/
+.prettierrc
+.idea
+/node_modules
