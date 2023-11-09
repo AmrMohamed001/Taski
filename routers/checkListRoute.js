@@ -4,10 +4,7 @@ const checkController = require('../controllers/checkController');
 const auth = require('../controllers/authentication');
 ////////////////////////////////////////////////
 Router.use(auth.protect);
-Router.post(
-  '/checklist/complete/:checklistItemId',
-  checkController.markCompleted
-);
+Router.post('/complete/:checklistItemId', checkController.markCompleted);
 Router.route('/')
   .get(auth.giveAccessTo('admin'), checkController.getAllChecks)
   .post(checkController.addCheck);
