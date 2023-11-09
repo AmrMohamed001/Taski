@@ -31,6 +31,7 @@
     "xss-clean": "^0.1.4"
   },
   "devDependencies": {
-    "ndb": "^1.1.5"
+    "ndb": "^1.1.5",
+    "nodemon": "^3.0.1"
   }
 }
