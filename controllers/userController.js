@@ -71,18 +71,6 @@ exports.deleteUser = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.addTaskToMember = catchAsync(async (req, res, next) => {
-  await User.findByIdAndUpdate(req.params.id, {
-    $addToSet: { tasks: req.params.taskId },
-  });
-  await Task.findByIdAndUpdate(req.params.taskId, {
-    $addToSet: { members: req.params.id },
-  });
-
-  // Send a success response.
-  res.send({ success: true });
-});
-
 const filterObj = (body, ...wanted) => {
   /* [name,email,bith,gender] [name,email] */
   const filtered = {};

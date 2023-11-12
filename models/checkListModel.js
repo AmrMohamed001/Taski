@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/* const mongoose = require('mongoose');
 /////////////////////////////////////////////
 const listSchema = new mongoose.Schema(
   {
@@ -26,3 +26,4 @@ const listSchema = new mongoose.Schema(
 );
 const Check = mongoose.model('Check', listSchema);
 module.exports = Check;
+ */

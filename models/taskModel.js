@@ -32,10 +32,22 @@ const taskSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    createdBy: {
+    user: {
       type: mongoose.Schema.ObjectId,
       ref: 'User',
     },
+    checkList: [
+      {
+        name: {
+          type: String,
+          trim: true,
+        },
+        completed: {
+          type: Boolean,
+          default: false,
+        },
+      },
+    ],
   },
   {
     timestamps: true,
@@ -47,17 +59,18 @@ const taskSchema = new mongoose.Schema(
 ////////////////////////////////////////////////////////
 taskSchema.index({ name: 1 });
 ////////////////////////////////////////////////////////
-taskSchema.virtual('checkList', {
+/* taskSchema.virtual('checkList', {
   ref: 'Check',
   foreignField: 'task',
   localField: '_id',
-});
-////////////////////////////////////////////////////////
+}) */ ////////////////////////////////////////////////////////
 taskSchema.pre(/^find/, function (next) {
-  this.populate({ path: 'checkList', select: 'name completed' }).populate({
-    path: 'members',
-    select: 'name email photo',
-  });
+  this /* .populate({ path: 'checkList', select: 'name completed' }) */.populate(
+    {
+      path: 'members',
+      select: 'name email photo',
+    }
+  );
   next();
 });
 

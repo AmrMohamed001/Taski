@@ -1,5 +1,5 @@
 const express = require('express');
-const Router = express.Router({ mergeParams: true });
+const Router = express.Router();
 const userController = require('../controllers/userController');
 const taskController = require('../controllers/taskController');
 const auth = require('../controllers/authentication');
@@ -24,7 +24,6 @@ Router.get('/find-members', userController.getUsers);
 //For Adminstration
 Router.route('/').get(auth.giveAccessTo('admin'), userController.getUsers);
 Router.route('/:id')
-  .post(userController.addTaskToMember)
   .get(auth.giveAccessTo('admin'), userController.getUser)
   .patch(auth.giveAccessTo('admin'), userController.updateUser)
   .delete(auth.giveAccessTo('admin'), userController.deleteUser);

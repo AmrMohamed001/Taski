@@ -6,7 +6,7 @@ const handleCastErrorDB = (error) => {
 };
 
 const handleDuplicateFieldsDB = (error) => {
-  let message = `duplicate field value: ${error.keyValue.name}`;
+  let message = `${error.keyValue.name} , is taken before`;
   return new appError(message, 400);
 };
 

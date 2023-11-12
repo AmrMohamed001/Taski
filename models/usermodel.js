@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema(
       required: [true, 'You must enter your name'],
       lower: true,
       trim: true,
-      unique: true,
+      //unique: true,
       minLength: [3, 'your name must be greater than 3 chars'],
       maxLength: [20, 'your name must be less than 20 chars'],
       //validate: [validator.isAlpha, 'Enter Valid name please'],
@@ -33,7 +33,6 @@ const userSchema = new mongoose.Schema(
       required: [true, 'enter your phone number'],
       unique: true,
     },
-
     role: {
       type: String,
       enum: ['user', 'admin'],
@@ -48,16 +47,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: 'default.jpg',
     },
-    tasks: [
-      {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Task',
-      },
-    ],
     active: {
       type: Boolean,
       default: true,
-      //select: false,
+      select: false,
     },
     passwordChangedAt: Date,
     passwordResetCode: String,
@@ -68,6 +61,12 @@ const userSchema = new mongoose.Schema(
     toObject: { virtuals: true },
   }
 );
+////////////////////////////////////////////////
+userSchema.virtual('tasks', {
+  ref: 'Task',
+  foreignField: 'user',
+  localField: '_id',
+});
 ////////////////////////////////////////////////
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
@@ -104,6 +103,8 @@ userSchema.methods.createRandomVerifyCode = function () {
   this.passwordResetExpireIn = Date.now() + 3 * 60 * 1000; // 2-min
   return code;
 };
+////////////////////////////////////////////////
+
 ////////////////////////////////////////////////
 const User = mongoose.model('User', userSchema);
 module.exports = User;

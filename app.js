@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 // mounting
 app.use('/api/v1/tasks', taskRoute);
 app.use('/api/v1/users', userRoute);
-app.use('/api/v1/checks', checkListRoute);
+// app.use('/api/v1/checks', checkListRoute);
 app.use('/api/v1/activites', activitiesRoute);
 app.all('*', (req, res, next) => {
   next(new appError('this route is not found', 404));

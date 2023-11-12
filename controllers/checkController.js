@@ -1,4 +1,4 @@
-const catchAsync = require('../utils/catchAsync');
+/* const catchAsync = require('../utils/catchAsync');
 const Check = require('../models/checkListModel');
 const Activity = require('../models/activityModel');
 const appError = require('../utils/appError');
@@ -80,3 +80,4 @@ exports.markCompleted = catchAsync(async (req, res, next) => {
     .status(200)
     .json({ message: 'Checklist item completed and activity logged' });
 });
+ */

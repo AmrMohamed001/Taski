@@ -9,10 +9,6 @@ const activitySchema = new mongoose.Schema(
       type: String, // E.g., 'completed' or 'deleted'
     },
     details: String, // Additional information about the activity
-    checklistItem: {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Checklist',
-    },
     task: {
       type: mongoose.Schema.ObjectId,
       ref: 'Task',
@@ -26,6 +22,9 @@ activitySchema.pre(/^find/, function (next) {
   this.populate({
     path: 'user',
     select: 'name email photo',
+  }).populate({
+    path: 'task',
+    select: 'checkList',
   });
   next();
 });

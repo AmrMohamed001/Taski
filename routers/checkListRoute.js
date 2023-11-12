@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const Router = express.Router();
 const checkController = require('../controllers/checkController');
 const auth = require('../controllers/authentication');
@@ -14,3 +14,4 @@ Router.route('/:id')
   .delete(auth.protect, checkController.deleteCheck);
 ////////////////////////////////////////////////
 module.exports = Router;
+ */
