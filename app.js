@@ -31,7 +31,7 @@ app.use('/api/v1/tasks', taskRoute);
 app.use('/api/v1/users', userRoute);
 // app.use('/api/v1/checks', checkListRoute);
 app.use('/api/v1/activites', activitiesRoute);
-app.use('test',(req,res)=>res.send('welcome to test))
+app.use('/test',(req,res)=>res.send('welcome to test))
 app.all('*', (req, res, next) => {
   next(new appError('this route is not found', 404));
 });
