@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema(
     phone: {
       type: String,
       required: [true, 'enter your phone number'],
-      unique: true,
+      // unique: true,
     },
     role: {
       type: String,

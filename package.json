@@ -18,6 +18,7 @@
     "express": "^4.18.2",
     "express-mongo-sanitize": "^2.2.0",
     "fcm-node": "^1.6.1",
+    "firebase-admin": "^11.11.0",
     "hpp": "^0.2.3",
     "html-to-text": "^9.0.5",
     "jsonwebtoken": "^9.0.2",
